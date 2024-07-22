@@ -1,7 +1,14 @@
+//required for client interactivity
+'use client';
+
+//objects
 import Image from "next/image";
 import styles from "./page.module.css";
 import darkModeImg from "../public/icons/dark-mode.svg";
 import lightModeImg from "../public/icons/light-mode.svg";
+
+//scripts
+import handleThemeChange from "./handleThemeChange";
 
 export default function Home() {
   return (
@@ -12,7 +19,7 @@ export default function Home() {
           <code className={styles.code}>app/page.js</code>
         </p>
 
-        <div className={styles.themeSwitch}>
+        <div onClick={handleThemeChange} className={styles.themeSwitch}>
           <div className={styles.themeSlider}>
             <Image
               src={darkModeImg}
